@@ -13,16 +13,16 @@ async function bootstrap() {
     new FastifyAdapter()
   );
 
-   const config = new DocumentBuilder()
-    .setTitle('Cats example')
-    .setDescription('The cats API description')
+  const config = new DocumentBuilder()
+    .setTitle('Calendar')
+    .setDescription('Calendar description')
     .setVersion('1.0')
-    .addTag('cats')
+    .addTag('calendar')
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
   app.useGlobalPipes(new ValidationPipe());
   SwaggerModule.setup('api', app, documentFactory);
-  
+
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();

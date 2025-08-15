@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md,json,scss}\" --config ./.prettierrc.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "nest build",
     "start:dev": "nest start --watch",
-    "start:prod": "node ."
+    "start:prod": "node .",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -24,5 +26,9 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.2",
     "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "prettier": "^3.6.2"
   }
 }
